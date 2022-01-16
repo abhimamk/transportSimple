@@ -1,47 +1,29 @@
-<form [formGroup]="tpsForm">
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="sp">Start Point</span>
+<div class="container">
+  <form [formGroup]="tpsForm" class="mt-3">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="sp">Start Point</span>
+      </div>
+      <input type="text" class="form-control" formControlName="start">
     </div>
-    <input type="text" class="form-control" formControlName="start">
-  </div>
 
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="ep">End Point</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="ep">End Point</span>
+      </div>
+      <input type="text" class="form-control" formControlName="end">
     </div>
-    <input type="text" class="form-control" formControlName="end">
-  </div>
-  <div class="text-center">
-    <button [disabled]="tpsForm.invalid" type="button" class="btn btn-primary" (click)="onAdd()">Primary</button>
-  </div>
-</form>
+    <div class="text-center">
+      <button [disabled]="tpsForm.invalid" type="button" class="btn btn-primary" (click)="onAdd()">Add Route</button>
+    </div>
+  </form>
+</div>
 
-<div>
+<div class="container" *ngIf="arr.length!==0">
   {{arr | json}}
 </div>
 
-<!-- <div class="mt-5">
-
-</div>
-<div>
-  <div *ngIf="straightOrg">
-    <hr class="straight">
-  </div>
-</div> -->
-
 <div class="container">
-
-
-  <!-- <div class="row mt-5">
-
-    <div class="col">
-      <small>hi</small>
-    </div>
-    <div class="col" >
-      <small>ji</small>
-    </div>
-  </div> -->
   <div>
     <h6>Colors code</h6>
     <small style="color: purple;">purple: continued trip</small><br>
